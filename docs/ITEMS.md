@@ -257,7 +257,7 @@ Source : `src/data/items.ts` — **158 items** en 22 catégories. Les liens de f
 | `vetements_simples` | Vêtements simples | 6 | 1 | Commun | — | tailleur |
 | `cape_voyage` | Cape de voyage | 18 | 1.5 | Commun | — | tailleur |
 | `vetements_fins` | Vêtements fins | 70 | 1.5 | Peu commun | tags luxe | tailleur |
-| `robe_mage` | Robe d’arcaniste | 90 | 1.5 | Peu commun | VOL +1 (passif) | tailleur, arcaniste |
+| `robe_mage` | Robe d’arcaniste | 90 | 1.5 | Peu commun | Se porte en armure : armure +1, VOL +1 (passif) | tailleur, arcaniste |
 
 ### bijou (5)
 
@@ -348,7 +348,7 @@ Source : `src/data/items.ts` — **158 items** en 22 catégories. Les liens de f
 
 ## 6. Points d'attention
 
-- Items **sans source** (ni recette, ni butin, ni récolte, ni boutique) : `fronde` (utilisée par les halfelins), `dague_ornee`, `luth`, `chevaliere` (uniquement objets de départ d'origine), `relique_aube` (désirée par Sœur Maëlis, introuvable pour l'instant : quête future).
+- Items obtenus uniquement comme objets de départ d'origine : `dague_ornee`, `luth`, `chevaliere`. La `relique_aube` (désirée par Sœur Maëlis) se rachète chez le receleur des Bas-Quais, comme le laisse entendre la rumeur de Maëlis ; la `fronde` est vendue à l'étal de Mère Pivoine.
 - Items **sans usage** mécanique actuel (ni recette, ni effet, ni équipement, ni désir de PNJ) : `mithril_brut`, `gemme_brute`, `pierre`, `lait`, `plume`, `bois_cerf`, `os_ancien`, `corne_demon`, `griffe_dragon`, `coeur_draconique`, les vêtements sans effet, `coffre_bois`, `table_chene`, `contrebande`, `lettre_recommandation`, `licence_commerce` (sert à l'achat de boutique), `cle_crypte`, `carte_tresor`, `lettre_scellee`. Ils ont une valeur marchande ; leurs usages sont des pistes **Futur** (recettes au mithril, gemmes taillées, quêtes d'Esteral).
 - `poison` : la description parle d'enduire une lame, l'effet est un buff de FOR +3 pendant 2 h.
 - Les **vêtements** n'ont pas de `slot` (le type ne prévoit que `arme`, `armure`, `outil`, `bijou`) : la Robe d'arcaniste (VOL +1 passif) ne peut donc pas être équipée en l'état. **Futur** : emplacement `vetement`.

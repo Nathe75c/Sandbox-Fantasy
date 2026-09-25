@@ -194,7 +194,7 @@ export const ITEMS: ItemDef[] = [
   item({ id: 'vetements_simples', name: 'Vêtements simples', category: 'vetement', description: 'Tenue de travail en lin.', value: 6, weight: 1, jobs: ['tailleur'] }),
   item({ id: 'cape_voyage', name: 'Cape de voyage', category: 'vetement', description: 'Protège de la pluie et des regards.', value: 18, weight: 1.5, jobs: ['tailleur'] }),
   item({ id: 'vetements_fins', name: 'Vêtements fins', category: 'vetement', description: 'Brocart et soie. Ouvre les portes des nobles.', value: 70, weight: 1.5, rarity: 'peu_commun', jobs: ['tailleur'], tags: ['luxe'] }),
-  item({ id: 'robe_mage', name: 'Robe d’arcaniste', category: 'vetement', description: 'Tissu brodé de runes.', value: 90, weight: 1.5, rarity: 'peu_commun', effects: [{ type: 'buff', stat: 'volonte', amount: 1, hours: 0 }], jobs: ['tailleur', 'arcaniste'] }),
+  item({ id: 'robe_mage', name: 'Robe d’arcaniste', category: 'vetement', description: 'Tissu brodé de runes.', value: 90, weight: 1.5, rarity: 'peu_commun', slot: 'armure', effects: [{ type: 'armor', amount: 1 }, { type: 'buff', stat: 'volonte', amount: 1, hours: 0 }], jobs: ['tailleur', 'arcaniste'] }),
 
   // ------------------------------------------------------------------- Bijoux
   item({ id: 'anneau_cuivre', name: 'Anneau de cuivre', category: 'bijou', description: 'Bijou modeste.', value: 15, weight: 0.1, slot: 'bijou', jobs: ['forgeron'] }),

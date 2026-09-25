@@ -335,4 +335,4 @@ Revenant, 800 ans, garde, Cour Nocturne · statut miserable · 20 po. *mélancol
 
 - Relations **à sens unique** (A connaît B, B n'a pas d'avis sur A) : Odile→Hector, Tobbin→Pivoine, Grukka→Jorun, Varek→Hector, Thrain→Grukka, Comtesse→Sœur Maëlis. Peut être voulu (asymétrie sociale), à confirmer.
 - Répliques **hostiles manquantes** pour Tobbin, Mirelle, Jorun et Osric : prévoir un repli sur le palier « méfiant ».
-- Le désir de Sœur Maëlis `relique_aube` n'a aucune source dans le contenu (quête **Futur**).
+- La `relique_aube` désirée par Sœur Maëlis se trouve chez Sifflet, le receleur des Bas-Quais : la racheter (ou la voler) puis la rendre au Temple forme une première mini-quête émergente. Une vraie chaîne de quête scénarisée est prévue (**Futur**).

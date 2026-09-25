@@ -29,7 +29,7 @@ export const LOCATIONS: LocationDef[] = [
     creatureSpawns: [],
     shops: [
       { id: 'forge_du_gue', name: 'Forge de Barda', ownerNpcId: 'barda', sells: ['epee_fer', 'couteau', 'pioche', 'hache_bucheron', 'marteau', 'faucille', 'lingot_fer', 'clous', 'hachette', 'lance_chasse'], buysCategories: ['minerai', 'materiau', 'arme', 'outil'], startingGold: 250 },
-      { id: 'marche_du_gue', name: 'Étal de Mère Pivoine', ownerNpcId: 'pivoine', sells: ['pain', 'fromage', 'oeuf', 'lait', 'legumes', 'farine', 'tarte_baies', 'ration', 'sel', 'miel', 'etoffe', 'aiguille', 'fiole'], buysCategories: ['ingredient', 'aliment', 'plante', 'ressource_animale'], startingGold: 150, purchasePrice: 400 },
+      { id: 'marche_du_gue', name: 'Étal de Mère Pivoine', ownerNpcId: 'pivoine', sells: ['pain', 'fromage', 'oeuf', 'lait', 'legumes', 'farine', 'tarte_baies', 'ration', 'sel', 'miel', 'etoffe', 'aiguille', 'fiole', 'fronde'], buysCategories: ['ingredient', 'aliment', 'plante', 'ressource_animale'], startingGold: 150, purchasePrice: 400 },
     ],
     stations: ['forge', 'cuisine', 'atelier'],
     produces: ['ingredient', 'aliment'],
@@ -134,7 +134,7 @@ export const LOCATIONS: LocationDef[] = [
     gatherables: [],
     creatureSpawns: [{ creatureId: 'bandit', weight: 1, max: 1 }],
     shops: [
-      { id: 'receleur_quais', name: 'L’arrière-boutique de Sifflet', ownerNpcId: 'sifflet', sells: ['crochets', 'poison', 'faux_papiers', 'contrebande', 'couteau', 'cape_voyage', 'bouillie_rance', 'haillons'], buysCategories: ['bijou', 'marchandise', 'arme', 'objet_magique', 'potion', 'document', 'vetement', 'livre'], startingGold: 350, fence: true },
+      { id: 'receleur_quais', name: 'L’arrière-boutique de Sifflet', ownerNpcId: 'sifflet', sells: ['crochets', 'poison', 'faux_papiers', 'contrebande', 'couteau', 'cape_voyage', 'bouillie_rance', 'haillons', 'relique_aube'], buysCategories: ['bijou', 'marchandise', 'arme', 'objet_magique', 'potion', 'document', 'vetement', 'livre'], startingGold: 350, fence: true },
     ],
     stations: ['tannerie'],
     produces: ['marchandise'],
