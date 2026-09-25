@@ -2,7 +2,7 @@
 
 Chaque version reste **jouable** et **rétrocompatible** avec les sauvegardes précédentes (migrations `schemaVersion`). Tout ce qui suit la 0.1 est **Futur**.
 
-## 0.1 — MVP solo (en cours)
+## 0.1 — MVP solo (livré)
 
 Voir [MVP.md](MVP.md).
 
@@ -12,7 +12,21 @@ Voir [MVP.md](MVP.md).
 - UI responsive PC/tablette, sauvegarde locale (3 emplacements + autosave).
 - Tests : validation du contenu, moteur.
 
-## 0.2 — Contenu et quêtes
+## 0.2 — Monde visuel : 2.5D puis 3D (prochaine étape)
+
+Objectif : quitter le style « idle » (menus et boutons de texte) pour un monde que l'on parcourt avec son personnage.
+
+- Rendu : **Three.js via @react-three/fiber + @react-three/drei**, caméra orthographique isométrique (2.5D) au départ, passage en perspective 3D plus tard sans changer de moteur. Modèles low-poly glTF libres (CC0), formes simples en attendant.
+- Le moteur `src/game` reste la source de vérité ; le rendu est une couche d'affichage (`src/scene/`) qui lit l'état et envoie des actions.
+- Temps réel côté client (déplacement fluide, animations, caméra) ; seules les décisions de jeu deviennent des actions. Position du joueur dans le lieu ajoutée à `PlayerState` (migration de sauvegarde).
+- Lieux explorables décrits en données (taille, sol, décors, points d'intérêt : PNJ, récolte, stations, sorties).
+- PNJ et créatures visibles et mobiles ; combat déclenché au contact.
+- Contrôles : clic/toucher pour se déplacer et interagir, clavier sur PC, joystick virtuel sur tablette. Les panneaux actuels (sac, artisanat, dialogues, boutiques…) s'affichent par-dessus la scène.
+- Premier jalon : un seul lieu (village de départ) jouable en 2.5D, puis extension aux 14 lieux.
+
+Pourquoi ce choix : il garde la stack TypeScript/React et tout le moteur existant, tourne dans le navigateur sur PC et tablette (WebGL), et couvre 2.5D comme 3D. Un moteur séparé (Godot, Unity) imposerait de réécrire le moteur de jeu et les données.
+
+## 0.3 — Contenu et quêtes
 
 - **Quêtes à étapes** data-driven (`src/data/quests.ts`) : objectifs (apporter, tuer, visiter, fabriquer, parler), récompenses, conditions d'opinion/réputation.
 - Donner un usage aux objets en attente : `relique_aube` (quête de Sœur Maëlis et de Sifflet), `cle_crypte` + `carte_tresor` (crypte d'Esteral, Osric), `lettre_scellee` (intrigue du Bailli), `lettre_recommandation`, `statuette_esteral`.
@@ -23,7 +37,7 @@ Voir [MVP.md](MVP.md).
 - Nouveaux événements, rumeurs contextuelles, dialogues plus riches par PNJ.
 - Encyclopédie in-game générée depuis `CONTENT` et `itemUsage()`.
 
-## 0.3 — Gestion : boutiques, bandes, construction
+## 0.4 — Gestion : boutiques, bandes, construction
 
 - **Boutiques du joueur** : fixer les prix, choisir le stock, embaucher un PNJ, entrepôt.
 - **Caravanes** : transport automatisé entre lieux avec escorte (Mercenaire) et risque d'embuscade.
@@ -32,7 +46,7 @@ Voir [MVP.md](MVP.md).
 - Missions et rangs de faction ; salaire ; accès réservés.
 - Justice étendue : prison, primes, avis de recherche.
 
-## 0.4 — Backend et comptes
+## 0.5 — Backend et comptes
 
 - Serveur autoritaire TypeScript réutilisant `src/game` (voir [MULTIPLAYER_READY_ARCHITECTURE.md](MULTIPLAYER_READY_ARCHITECTURE.md)).
 - Comptes, authentification, personnages multiples, sauvegarde en ligne (adaptateur serveur de `StorageAdapter`).
@@ -40,14 +54,14 @@ Voir [MVP.md](MVP.md).
 - Horloge de monde serveur ; tick planifié.
 - Toujours **un joueur par monde** : on valide la chaîne client → serveur → événements.
 
-## 0.5 — Multijoueur
+## 0.6 — Multijoueur
 
 - Plusieurs joueurs dans le même monde : diffusion d'événements par lieu, présence des autres joueurs.
 - Commerce et échanges entre joueurs, chat local, groupes.
 - Concurrence sur les ressources partagées (stocks, créatures, boutiques).
 - Anti-triche, limites de débit, audit.
 
-## 0.6+ — Monde étendu
+## 0.7+ — Monde étendu
 
 - Nouvelles régions (`regionId`) : au-delà du Col des Crocs, outre-mer depuis Port-Salant.
 - Saisons et météo (récoltes, routes), cycle jour/nuit (PNJ nocturnes, Cour Nocturne).

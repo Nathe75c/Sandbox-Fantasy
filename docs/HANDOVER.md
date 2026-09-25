@@ -101,21 +101,21 @@ src/data/*.ts   --->  GameState (JSON pur) <--- applyAction(state, action) <--- 
 ## 8. Limites connues du MVP
 
 - Équilibrage (prix, gains des métiers, difficulté des combats) vérifié par simulation seulement, pas par de vraies parties.
-- Quelques objets sans usage mécanique (relique de l'Aube, clé de crypte, carte au trésor, lettre scellée, statuette, certaines ressources rares) : prévus pour les quêtes 0.2.
+- Quelques objets sans usage mécanique (relique de l'Aube, clé de crypte, carte au trésor, lettre scellée, statuette, certaines ressources rares) : prévus pour les quêtes (version 0.3).
 - Certaines relations entre factions ne sont définies que dans un sens.
 - `work.locationKinds` sur les métiers n'est pas lu par le moteur (c'est `location.workJobs` qui décide où l'on travaille).
-- Pas de quêtes, pas d'illustrations ni de son ; interface surtout textuelle.
+- Pas de quêtes, pas d'illustrations ni de son ; interface surtout textuelle, au style « idle » : c'est ce que la version 0.2 remplace par un monde parcouru en 2.5D puis 3D.
 - Pas de CI GitHub : les tests se lancent en local.
 
-## 9. Prochaines étapes suggérées
+## 9. Prochaines étapes
 
-1. **Mise en ligne sur GitHub Pages** : jouer depuis un lien sur PC et tablette, sans terminal.
-2. **Équilibrage** après quelques heures de jeu réel.
-3. **Quêtes à étapes** data-driven (`src/data/quests.ts`) qui donnent un usage aux objets en attente — cœur de la version 0.2.
-4. Finitions des données listées au §8.
-5. Ambiance (illustrations, sons), puis nouveau contenu.
+Direction décidée par Collins le 25/09/2026 : le jeu ne doit plus être de style « idle ». Il passera en **2.5D puis 3D**, avec un personnage qu'on déplace dans des lieux explorables.
 
-Vue complète par version (0.2 quêtes → 0.3 gestion → 0.4 backend → 0.5 multijoueur → 0.6 monde étendu) : [ROADMAP.md](ROADMAP.md).
+1. **Version 0.2, monde visuel** : Three.js via @react-three/fiber, caméra isométrique ; un premier lieu jouable (déplacement, PNJ, récolte, artisanat, sortie, créatures), puis les 14 lieux. Détails et raisons dans [ROADMAP.md](ROADMAP.md).
+2. **Version 0.3, contenu et quêtes** : quêtes à étapes data-driven (`src/data/quests.ts`) qui donnent un usage aux objets en attente.
+3. En parallèle : équilibrage après de vraies parties, finitions des données listées au §8, mise en ligne sur GitHub Pages pour jouer depuis un lien.
+
+Vue complète : 0.2 monde visuel → 0.3 quêtes → 0.4 gestion → 0.5 backend → 0.6 multijoueur → 0.7 monde étendu ([ROADMAP.md](ROADMAP.md)).
 
 ## 10. Ordre de lecture des docs
 
