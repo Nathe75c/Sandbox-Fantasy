@@ -10,7 +10,7 @@ Le MVP est **solo avec sauvegarde locale**, mais l'architecture est pensée pour
 
 ## Démarrer
 
-Prérequis : Node.js 20+ (testé avec Node 22).
+Prérequis : Node.js 20.19+ ou 22.12+ (testé avec Node 22).
 
 ```bash
 npm install
@@ -54,6 +54,8 @@ src/
   components/         Interface React (création, lieu, carte, sac, artisanat, métiers, PNJ, boutique, combat)
   styles/             CSS responsive PC/tablette
 ```
+
+**Reprendre le projet en local** : commencer par [`docs/HANDOVER.md`](docs/HANDOVER.md) (installation, architecture, décisions, état, prochaines étapes, ordre de lecture).
 
 Voir [`docs/README.md`](docs/README.md) pour l'index de la documentation et
 [`docs/MULTIPLAYER_READY_ARCHITECTURE.md`](docs/MULTIPLAYER_READY_ARCHITECTURE.md) pour la préparation au multijoueur.

@@ -4,6 +4,7 @@ Documentation de conception du jeu. Les chiffres et identifiants proviennent du 
 
 | Fichier | Contenu |
 |---|---|
+| [HANDOVER.md](HANDOVER.md) | **À lire en premier** : reprise en local, architecture en une page, décisions, limites connues, prochaines étapes, ordre de lecture. |
 | [VISION.md](VISION.md) | Promesse, piliers, univers, public, ce que le jeu n'est pas. |
 | [GAME_DESIGN.md](GAME_DESIGN.md) | Boucles de jeu (minute, heure, jour, long terme), styles de vie possibles, première heure. |
 | [MVP.md](MVP.md) | Périmètre de la version 0.1 : contenu, actions, systèmes livrés, et ce qui est hors MVP. |
