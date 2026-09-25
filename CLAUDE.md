@@ -2,6 +2,8 @@
 
 Guide pour les agents qui travaillent sur ce dépôt. Le propriétaire (Collins) écrit en français : répondre, documenter et nommer le contenu en français. Les identifiants de code restent en anglais, les ids de contenu en snake_case français.
 
+Contexte complet du projet (état, décisions, limites, prochaines étapes) : `docs/HANDOVER.md`. Feuille de route : `docs/ROADMAP.md`.
+
 ## Commandes
 
 - `npm install` puis `npm run dev` (Vite, port 5173)
