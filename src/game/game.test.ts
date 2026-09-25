@@ -156,4 +156,34 @@ describe('moteur de jeu', () => {
     const restored = deserialize(serialize(s, P));
     expect(restored).toEqual(s);
   });
+
+  it('apprend un métier auprès d’un maître, travaille et rachète une boutique', () => {
+    let s = at(newGame('marchand_ne'), 'bourg_du_gue');
+    s.world.npcs.pivoine.locationId = 'bourg_du_gue';
+    s.players[P].gold = 1000;
+    let res = act(s, { type: 'learn_job', payload: { jobId: 'cuisinier', npcId: 'pivoine' } });
+    expect(res.error).toBeUndefined();
+    expect(res.state.players[P].jobs.cuisinier?.level).toBe(1);
+    res = act(res.state, { type: 'work', payload: { jobId: 'fermier', hours: 4 } });
+    expect(res.error).toBeUndefined();
+    expect(res.state.players[P].jobs.fermier).toBeDefined();
+    expect(act(res.state, { type: 'buy_shop', payload: { shopId: 'marche_du_gue' } }).error).toMatch(/licence/);
+    addItem(res.state.players[P], 'licence_commerce', 1);
+    res.state.players[P].energy = 20;
+    res = act(res.state, { type: 'buy_shop', payload: { shopId: 'marche_du_gue' } });
+    expect(res.error).toBeUndefined();
+    expect(res.state.world.shops.marche_du_gue.ownerPlayerId).toBe(P);
+  });
+
+  it('les dialogues modifient l’opinion et les options spéciales dépendent de l’origine', () => {
+    const s = at(newGame('soldat'), 'bourg_du_gue');
+    s.world.npcs.hector.locationId = 'bourg_du_gue';
+    const before = s.world.npcs.hector.opinions[P];
+    const res = act(s, { type: 'talk', payload: { npcId: 'hector', option: 'special', specialIndex: 0 } });
+    expect(res.error).toBeUndefined();
+    expect(res.state.world.npcs.hector.opinions[P]).toBeGreaterThan(before);
+    expect(act(res.state, { type: 'talk', payload: { npcId: 'hector', option: 'special', specialIndex: 1 } }).error).toBeTruthy();
+    const insult = act(res.state, { type: 'talk', payload: { npcId: 'hector', option: 'insulter' } });
+    expect(insult.state.world.npcs.hector.opinions[P]).toBeLessThan(res.state.world.npcs.hector.opinions[P]);
+  });
 });
