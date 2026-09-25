@@ -385,6 +385,8 @@ export const LOCATIONS: LocationDef[] = [
       { creatureId: 'gobelin_sauvage', weight: 2, max: 2 },
       { creatureId: 'zombie', weight: 2, max: 2 },
       { creatureId: 'goule', weight: 1, max: 1 },
+      { creatureId: 'diablotin', weight: 0.5, max: 1 },
+      { creatureId: 'strige', weight: 0.3, max: 1 },
     ],
     shops: [
       { id: 'comptoir_confrerie', name: 'Comptoir de Nixi', ownerNpcId: 'nixi', sells: ['champignon_noir', 'racine_amere', 'venin_araignee', 'poison', 'antidote', 'potion_soin', 'fiole', 'mortier', 'alambic', 'soie_araignee', 'carte_tresor'], buysCategories: ['plante', 'ressource_creature', 'potion', 'marchandise', 'objet_magique'], startingGold: 300, fence: true },

@@ -44,7 +44,7 @@ export const CREATURES: CreatureDef[] = [
     strengths: ['Meute', 'Rapide'],
     weaknesses: ['feu'],
     resistances: [],
-    habitats: ['foret_sylvebrune', 'ferme_tillac', 'col_des_crocs', 'route_du_sel'],
+    habitats: ['foret_sylvebrune', 'ferme_tillac', 'col_des_crocs', 'route_du_sel', 'camp_gornak'],
     relations: {},
     drops: [
       { itemId: 'viande', chance: 0.9, min: 1, max: 2 },
